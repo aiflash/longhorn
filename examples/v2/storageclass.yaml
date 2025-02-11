@@ -7,11 +7,10 @@ allowVolumeExpansion: true
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
 parameters:
-  # backup, backingImage and snapshot related parameters are not supported in SPDK preview stage
   numberOfReplicas: "3"
   staleReplicaTimeout: "2880"
   fsType: "ext4"
-  backendStoreDriver: "v2"
+  dataEngine: "v2"
 #  mkfsParams: "-I 256 -b 4096 -O ^metadata_csum,^64bit"
 #  nodeSelector: "storage,fast"
 #  recurringJobSelector: '[{"name":"snap-group", "isGroup":true},
@@ -23,5 +22,6 @@ parameters:
 #  backingImageChecksum: "SHA512 checksum of the backing image"
 #  unmapMarkSnapChainRemoved: "ignored"
 #  diskSelector: "ssd,fast"
+#  nfsOptions: "soft,timeo=150,retrans=3"
 
 
